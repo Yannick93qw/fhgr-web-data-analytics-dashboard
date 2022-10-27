@@ -61,8 +61,17 @@ export default {
                 datasets: [
                     {
                         label: this.dataLabel,
+                        fill: 'origin',
                         borderColor: this.borderColor,
-                        backgroundColor: this.backgroundColor,
+                        backgroundColor: (ctx) => {
+                            const canvas = ctx.chart.ctx;
+                            const gradient = canvas.createLinearGradient(0, 0, 0, 500);
+
+                            gradient.addColorStop(1, this.backgroundColor);
+                            gradient.addColorStop(0, 'white');
+
+                            return gradient;
+                        },
                         data: [40, 20, 12]
                     }]
             },
