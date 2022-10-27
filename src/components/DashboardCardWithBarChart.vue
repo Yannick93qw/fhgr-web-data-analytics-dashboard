@@ -7,6 +7,7 @@
             <span :class="icon" style="font-size: 1.5rem"></span>
         </div>
         <p>{{ text }}</p>
+        <BarChart :dataLabel="dataLabel" />
     </div>
 </template>
 
@@ -47,8 +48,11 @@ span {
 </style>
 
 <script>
-
+import BarChart from '@/components/BarChart.vue'
 export default {
+    components: {
+        BarChart
+    },
     props: {
         title: {
             type: String,
@@ -65,7 +69,12 @@ export default {
         text: {
             type: String,
             default: ''
+        },
+        dataLabel: {
+            type: String,
+            default: ''
         }
-    }
+    },
 }
+
 </script>

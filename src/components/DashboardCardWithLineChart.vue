@@ -7,6 +7,7 @@
             <span :class="icon" style="font-size: 1.5rem"></span>
         </div>
         <p>{{ text }}</p>
+        <LineChart :dataLabel="dataLabel" />
     </div>
 </template>
 
@@ -47,8 +48,11 @@ span {
 </style>
 
 <script>
-
+import LineChart from '@/components/LineChart.vue'
 export default {
+    components: {
+        LineChart
+    },
     props: {
         title: {
             type: String,
@@ -65,7 +69,12 @@ export default {
         text: {
             type: String,
             default: ''
+        },
+        dataLabel: {
+            type: String,
+            default: ''
         }
-    }
+    },
 }
+
 </script>

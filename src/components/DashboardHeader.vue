@@ -2,7 +2,7 @@
     <div class="header-container">
         <h1>Udemy Dashboard</h1>
 
-        <img src="../assets/dashboard-header-logo.svg" alt="">
+        <img class="header-image" src="../assets/dashboard-header-logo.svg" alt="">
     </div>
 </template>
 
@@ -12,6 +12,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.header-image {
+    width: 5rem;
 }
 </style>
 
