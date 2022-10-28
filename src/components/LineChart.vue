@@ -65,7 +65,7 @@ export default {
                         borderColor: this.borderColor,
                         backgroundColor: (ctx) => {
                             const canvas = ctx.chart.ctx;
-                            const gradient = canvas.createLinearGradient(0, 0, 0, 500);
+                            const gradient = canvas.createLinearGradient(0, 0, 0, 400);
 
                             gradient.addColorStop(1, this.backgroundColor);
                             gradient.addColorStop(0, 'white');
