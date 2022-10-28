@@ -3,8 +3,15 @@
         :plugins="plugins" :css-classes="cssClasses" :styles="styles" :width="width" :height="height" />
 </template>
 
+<style>
+#line {
+    margin: 0 auto;
+}
+</style>
+
 <script>
 import { Line } from 'vue-chartjs'
+import utils from '@/util';
 
 export default {
     components: {
@@ -31,11 +38,11 @@ export default {
         },
         width: {
             type: Number,
-            default: 400
+            default: 250
         },
         height: {
             type: Number,
-            default: 400
+            default: 250
         },
         cssClasses: {
             default: '',
@@ -52,18 +59,22 @@ export default {
         dataLabel: {
             type: String,
             default: ''
+        },
+        useGradientFill: {
+            type: Boolean,
+            default: true
         }
     },
     data() {
         return {
             chartData: {
-                labels: ['January', 'February', 'March'],
+                labels: utils.months(12),
                 datasets: [
                     {
                         label: this.dataLabel,
                         fill: 'origin',
                         borderColor: this.borderColor,
-                        backgroundColor: (ctx) => {
+                        backgroundColor: this.useGradientFill ? (ctx) => {
                             const canvas = ctx.chart.ctx;
                             const gradient = canvas.createLinearGradient(0, 0, 0, 400);
 
@@ -71,12 +82,12 @@ export default {
                             gradient.addColorStop(0, 'white');
 
                             return gradient;
-                        },
-                        data: [40, 20, 12]
+                        } : this.backgroundColor,
+                        data: utils.randomNumbers(12, 50)
                     }]
             },
             chartOptions: {
-                responsive: true,
+                responsive: false,
                 scales: {
                     x: {
                         display: false

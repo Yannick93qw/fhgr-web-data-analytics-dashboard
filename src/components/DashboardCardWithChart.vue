@@ -1,13 +1,13 @@
 <template>
-    <div class="card">
+    <div class="card animate__animated animate__bounceIn">
         <h2>{{ title }}</h2>
 
         <div class="sub-title-row">
             <h3>{{ subTitle }}</h3>
             <h3 class="icon-prefix-text">{{ iconPrefixText }}</h3>
-            <span :class="icon" style="font-size: 1.5rem"></span>
+            <span :class="icon" style="font-size: 1.5rem; color: var(--color-primary) "></span>
         </div>
-        <p>{{ text }}</p>
+        <h1 class="text">{{ text }}</h1>
         <BarChart v-if="chartType == 'bar'" :dataLabel="dataLabel" />
         <LineChart v-if="chartType == 'line'" :dataLabel="dataLabel" />
     </div>
@@ -17,8 +17,8 @@
 .card {
     border: 1px solid #eff1f6;
     ;
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-height: 450px;
     box-sizing: border-box;
     background: linear-gradient(158.17deg,
             #f3f5fa -1.94%,
@@ -49,7 +49,11 @@ span {
 }
 
 .icon-prefix-text {
-    padding: 0 0.5rem;
+    padding: 0 0.2rem;
+    color: var(--color-primary);
+}
+
+.text {
     color: var(--color-primary);
 }
 </style>

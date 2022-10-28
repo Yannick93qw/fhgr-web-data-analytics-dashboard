@@ -3,8 +3,15 @@
         :plugins="plugins" :css-classes="cssClasses" :styles="styles" :width="width" :height="height" />
 </template>
 
+<style>
+#bar-chart {
+    margin: 0 auto;
+}
+</style>
+
 <script>
 import { Bar } from 'vue-chartjs'
+import utils from '@/util';
 
 export default {
     components: {
@@ -26,11 +33,11 @@ export default {
         },
         width: {
             type: Number,
-            default: 400
+            default: 250
         },
         height: {
             type: Number,
-            default: 400
+            default: 250
         },
         cssClasses: {
             default: '',
@@ -52,16 +59,16 @@ export default {
     data() {
         return {
             chartData: {
-                labels: ['January', 'February', 'March'],
+                labels: utils.months(12),
                 datasets: [
                     {
                         label: this.dataLabel,
                         backgroundColor: this.backgroundColor,
-                        data: [40, 20, 12]
+                        data: utils.randomNumbers(12, 50)
                     }]
             },
             chartOptions: {
-                responsive: true,
+                responsive: false,
                 scales: {
                     x: {
                         display: false
