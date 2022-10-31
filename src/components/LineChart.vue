@@ -24,8 +24,7 @@ export default {
         },
         backgroundColor: {
             type: String,
-            default: () => getComputedStyle(document.documentElement)
-                .getPropertyValue('--color-primary')
+            default: () => 'white'
         },
         borderColor: {
             type: String,
@@ -60,10 +59,6 @@ export default {
             type: String,
             default: ''
         },
-        useGradientFill: {
-            type: Boolean,
-            default: true
-        }
     },
     data() {
         return {
@@ -72,18 +67,9 @@ export default {
                 datasets: [
                     {
                         label: this.dataLabel,
-                        fill: 'origin',
                         borderColor: this.borderColor,
-                        backgroundColor: this.useGradientFill ? (ctx) => {
-                            const canvas = ctx.chart.ctx;
-                            const gradient = canvas.createLinearGradient(0, 0, 0, 400);
-
-                            gradient.addColorStop(1, this.backgroundColor);
-                            gradient.addColorStop(0, 'white');
-
-                            return gradient;
-                        } : this.backgroundColor,
-                        data: utils.randomNumbers(12, 50)
+                        pointBackgroundColor: this.backgroundColor,
+                        data: utils.randomNumbers(12, 50),
                     }]
             },
             chartOptions: {

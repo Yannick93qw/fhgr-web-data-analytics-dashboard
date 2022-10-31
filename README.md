@@ -27,3 +27,6 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Inspired References:
+- https://codepen.io/StandridgeN/pen/OJVJVyY

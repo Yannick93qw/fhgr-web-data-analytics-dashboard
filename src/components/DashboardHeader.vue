@@ -1,7 +1,7 @@
 <template>
     <div class="header-container">
         <img class="header-image" src="../assets/dashboard-header-logo.svg" alt="">
-        <h1 class="header-text">Udemy Dashboard</h1>
+        <h2 class="header-text">Udemy Dashboard</h2>
         <h3 class="header-date">01.01.2021-31.12.2022</h3>
     </div>
 </template>
@@ -17,16 +17,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(158.17deg,
-            #f3f5fa -1.94%,
-            #ebedf2 102.24%);
-    box-shadow: 0.2rem 0.4rem 1rem #a5bac766,
-        -0.1rem -0.1rem 0.2rem #ffffffb3;
+    box-shadow: -5px -5px 20px var(--card-shadow-start-color), 5px 5px 20px var(--card-shadow-stop-color);
     margin-bottom: 1rem;
 }
 
 .header-image {
-    width: 5rem;
+    width: 7rem;
 }
 
 .header-text {

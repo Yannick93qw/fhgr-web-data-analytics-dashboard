@@ -15,30 +15,30 @@
 
 <style>
 .card {
-    border: 1px solid #eff1f6;
-    ;
     width: auto;
     max-height: 450px;
     box-sizing: border-box;
-    background: linear-gradient(158.17deg,
-            #f3f5fa -1.94%,
-            #ebedf2 102.24%);
-    border-radius: 1.2rem;
-    ;
-    box-shadow: 0.2rem 0.4rem 1rem #a5bac766,
-        -0.1rem -0.1rem 0.2rem #ffffffb3;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px var(--card-shadow-start-color), 5px 5px 20px var(--card-shadow-stop-color);
     padding: 1.6rem 2.4rem;
     margin: 0.4rem;
 }
 
+.card:hover {
+    box-shadow: -2px -2px 5px var(--card-shadow-start-color), 2px 2px 5px var(--card-shadow-stop-color);
+}
+
 h2 {
-    color: var(--color-primary-black);
+    color: var(--text-color);
     text-transform: uppercase;
 }
 
 h3,
 span {
-    color: var(--color-primary-black);
+    color: var(--text-color);
 }
 
 .sub-title-row {
