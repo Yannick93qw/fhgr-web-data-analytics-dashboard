@@ -3,7 +3,9 @@
 
   <div class="card-list">
     <DashboardCardWithChart v-for="(item, index) in cardItems" :dataLabel="item.dataLabel" :title="item.title"
-      :subTitle="item.subTitle" :chartType="item.chartType" :iconPrefixText="item.iconPrefixText" :text="item.text" />
+      :subTitle="item.subTitle" :chartType="item.chartType" :iconText="item.iconText"
+      :iconTextStyle="item.iconTextStyle" :icon="item.icon" :iconStyle="item.iconStyle" :text="item.text"
+      :subText="item.subText" />
   </div>
 </template>
 
@@ -38,49 +40,61 @@ export default {
     return {
       cardItems: [
         {
-          title: 'Job Video',
-          subTitle: 'KPI: Anzahl Abspielungen',
-          iconPrefixText: '+50 %',
-          chartType: 'line',
-          dataLabel: 'Anzahl Abspielungen',
-
-        },
-        {
-          title: 'Job Video',
-          subTitle: 'KPI: Anzahl Abspielungen',
-          iconPrefixText: '+50 %',
+          title: 'Lead Generation',
+          subTitle: 'Monatliche neue Leads',
+          iconText: '+5% zum vorherigen Monat',
+          icon: 'q-icon-arrow-up',
           chartType: 'bar',
-          dataLabel: 'Anzahl Abspielungen',
-
+          dataLabel: 'Monatliche neue Leads',
         },
         {
-          title: 'Job Video',
-          subTitle: 'KPI: Anzahl Abspielungen',
-          iconPrefixText: '+50 %',
-          text: "5'000 Klicks",
-
-        },
-        {
-          title: 'Job Video',
-          subTitle: 'KPI: Anzahl Abspielungen',
-          iconPrefixText: '+50 %',
+          title: 'Lead Generation',
+          subTitle: 'Monatliche Lead-to-Sale Conversion Rate',
+          icon: 'q-icon-arrow-down',
+          iconText: '-1% zum vorherigen Monat',
+          iconTextStyle: {
+            color: getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-error')
+          },
+          iconStyle: {
+            color: getComputedStyle(document.documentElement)
+              .getPropertyValue('--color-error')
+          },
+          icon: 'q-icon-arrow-down',
           chartType: 'line',
-          dataLabel: 'Anzahl Abspielungen',
-
+          dataLabel: 'Lead-to-Sale Conversion Rate',
         },
         {
-          title: 'Job Video',
-          subTitle: 'KPI: Anzahl Abspielungen',
-          iconPrefixText: '+50 %',
+          title: 'Personalgewinnung',
+          subTitle: 'Monatliche Anzahl Besucher im Bereich "Bei Udemy unterrichten"',
+          iconText: '+5% zum vorherigen Monat',
+          icon: 'q-icon-arrow-up',
+          text: "10'000 Besucher",
+          subText: "Target 15'000 Besucher"
+        },
+        {
+          title: 'Personalgewinnung',
+          subTitle: 'Monatlich ausgefüllte Bewerbungsformulare',
+          iconText: '+10% zum vorherigen Monat',
+          icon: 'q-icon-arrow-up',
+          chartType: 'line',
+          dataLabel: 'Anzahl an Bewerbungen',
+        },
+        {
+          title: 'Online Sales',
+          subTitle: 'Monatliche Anzahl verkaufter Kurse',
+          iconText: '+15% zum vorherigen Monat',
+          icon: 'q-icon-arrow-up',
           chartType: 'bar',
-          dataLabel: 'Anzahl Abspielungen',
-
+          dataLabel: 'Anzahl verkaufter Kurse',
         },
         {
-          title: 'Job Video',
-          subTitle: 'KPI: Anzahl Abspielungen',
-          iconPrefixText: '+50 %',
-          text: "5'000 Klicks",
+          title: 'Online Marketing',
+          subTitle: 'Monatlich gewonnen Neukunden durch Kampagne',
+          iconText: '+3% zum vorherigen Monat',
+          icon: 'q-icon-arrow-up',
+          chartType: 'line',
+          dataLabel: 'Neukunden durch Kampagne',
 
         }
       ]

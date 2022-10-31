@@ -1,7 +1,7 @@
 <template>
     <div class="header-container">
         <img class="header-image" src="../assets/dashboard-header-logo.svg" alt="">
-        <h2 class="header-text">Udemy Dashboard</h2>
+        <h2 class="header-text">Strategic Dashboard</h2>
         <h3 class="header-date">01.01.2021-31.12.2022</h3>
     </div>
 </template>

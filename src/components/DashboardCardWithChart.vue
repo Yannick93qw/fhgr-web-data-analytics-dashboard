@@ -1,13 +1,14 @@
 <template>
     <div class="card animate__animated animate__bounceIn">
         <h2>{{ title }}</h2>
+        <h3>{{ subTitle }}</h3>
 
-        <div class="sub-title-row">
-            <h3>{{ subTitle }}</h3>
-            <h3 class="icon-prefix-text">{{ iconPrefixText }}</h3>
-            <span :class="icon" style="font-size: 1.5rem; color: var(--color-primary) "></span>
+        <div class="icon-row" v-if="iconText">
+            <h3 class="icon-text" :style="iconTextStyle">{{ iconText }}</h3>
+            <span :class="icon" class="icon" :style="iconStyle"></span>
         </div>
-        <h1 class="text">{{ text }}</h1>
+        <h1 v-if="text" class="text">{{ text }}</h1>
+        <h3 v-if="subText" class="sub-text">{{ subText }}</h3>
         <BarChart v-if="chartType == 'bar'" :dataLabel="dataLabel" />
         <LineChart v-if="chartType == 'line'" :dataLabel="dataLabel" />
     </div>
@@ -16,7 +17,7 @@
 <style>
 .card {
     width: auto;
-    max-height: 450px;
+    max-height: 550px;
     box-sizing: border-box;
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
@@ -25,6 +26,10 @@
     box-shadow: -5px -5px 20px var(--card-shadow-start-color), 5px 5px 20px var(--card-shadow-stop-color);
     padding: 1.6rem 2.4rem;
     margin: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
 .card:hover {
@@ -34,27 +39,42 @@
 h2 {
     color: var(--text-color);
     text-transform: uppercase;
+    text-align: center;
 }
 
 h3,
 span {
     color: var(--text-color);
+    text-align: center;
 }
 
-.sub-title-row {
+.icon-row {
     display: flex;
     flex-direction: row;
-    justify-content: start;
     align-items: center;
 }
 
-.icon-prefix-text {
+.icon-text {
     padding: 0 0.2rem;
     color: var(--color-primary);
 }
 
+.icon {
+    font-size: 1.5rem;
+}
+
 .text {
     color: var(--color-primary);
+    font-size: 4rem;
+    line-height: 4rem;
+    text-align: center;
+}
+
+.sub-text {
+    color: var(--text-color);
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
 }
 </style>
 
@@ -75,11 +95,34 @@ export default {
             type: String,
             default: ''
         },
+        iconText: {
+            type: String,
+            default: ''
+        },
+        iconTextStyle: {
+            type: Object,
+            default() {
+                return {}
+            }
+        },
+        iconStyle: {
+            type: Object,
+            default() {
+                return {
+                    color: getComputedStyle(document.documentElement)
+                        .getPropertyValue('--color-primary')
+                }
+            }
+        },
         icon: {
             type: String,
-            default: 'q-icon-arrow-up'
+            default: ''
         },
         text: {
+            type: String,
+            default: ''
+        },
+        subText: {
             type: String,
             default: ''
         },
@@ -90,10 +133,6 @@ export default {
         chartType: {
             type: String,
             default: 'none'
-        },
-        iconPrefixText: {
-            type: String,
-            default: ''
         }
     },
 }
