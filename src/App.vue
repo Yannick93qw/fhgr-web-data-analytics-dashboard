@@ -48,6 +48,22 @@ export default {
           dataLabel: 'Monatliche neue Leads',
         },
         {
+          title: 'Personalgewinnung',
+          subTitle: 'Monatlich ausgefüllte Bewerbungsformulare',
+          iconText: '+10% zum vorherigen Monat',
+          icon: 'q-icon-arrow-up',
+          chartType: 'line',
+          dataLabel: 'Anzahl an Bewerbungen',
+        },
+        {
+          title: 'Online Sales',
+          subTitle: 'Monatliche Anzahl verkaufter Kurse',
+          iconText: '+15% zum vorherigen Monat',
+          icon: 'q-icon-arrow-up',
+          chartType: 'bar',
+          dataLabel: 'Anzahl verkaufter Kurse',
+        },
+        {
           title: 'Lead Generation',
           subTitle: 'Monatliche Lead-to-Sale Conversion Rate',
           icon: 'q-icon-arrow-down',
@@ -71,22 +87,6 @@ export default {
           icon: 'q-icon-arrow-up',
           text: "10'000 Besucher",
           subText: "Target 15'000 Besucher"
-        },
-        {
-          title: 'Personalgewinnung',
-          subTitle: 'Monatlich ausgefüllte Bewerbungsformulare',
-          iconText: '+10% zum vorherigen Monat',
-          icon: 'q-icon-arrow-up',
-          chartType: 'line',
-          dataLabel: 'Anzahl an Bewerbungen',
-        },
-        {
-          title: 'Online Sales',
-          subTitle: 'Monatliche Anzahl verkaufter Kurse',
-          iconText: '+15% zum vorherigen Monat',
-          icon: 'q-icon-arrow-up',
-          chartType: 'bar',
-          dataLabel: 'Anzahl verkaufter Kurse',
         },
         {
           title: 'Online Marketing',

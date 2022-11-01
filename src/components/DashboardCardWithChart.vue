@@ -1,5 +1,5 @@
 <template>
-    <div class="card animate__animated animate__bounceIn">
+    <div class="card animate__animated animate__fadeIn">
         <h2>{{ title }}</h2>
         <h3>{{ subTitle }}</h3>
 
