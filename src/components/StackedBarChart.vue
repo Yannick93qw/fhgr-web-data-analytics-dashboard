@@ -22,7 +22,12 @@ export default {
             type: String,
             default: 'bar-chart'
         },
-        backgroundColor: {
+        backgroundColorOne: {
+            type: String,
+            default: () => getComputedStyle(document.documentElement)
+                .getPropertyValue('--color-primary')
+        },
+        backgroundColorTwo: {
             type: String,
             default: () => getComputedStyle(document.documentElement)
                 .getPropertyValue('--color-primary')
@@ -51,7 +56,11 @@ export default {
             type: Object,
             default: () => { }
         },
-        dataLabel: {
+        dataLabelOne: {
+            type: String,
+            default: ''
+        },
+        dataLabelTwo: {
             type: String,
             default: ''
         }
@@ -62,8 +71,13 @@ export default {
                 labels: utils.months(12),
                 datasets: [
                     {
-                        label: this.dataLabel,
-                        backgroundColor: this.backgroundColor,
+                        label: this.dataLabelOne,
+                        backgroundColor: this.backgroundColorOne,
+                        data: utils.randomNumbers(12, 50)
+                    },
+                    {
+                        label: this.dataLabelTwo,
+                        backgroundColor: this.backgroundColorTwo,
                         data: utils.randomNumbers(12, 50)
                     },
                 ]
@@ -80,12 +94,14 @@ export default {
                 scales: {
                     x: {
                         display: true,
+                        stacked: true,
                         ticks: {
                             color: 'white',
                         }
                     },
                     y: {
                         display: true,
+                        stacked: true,
                         ticks: {
                             color: 'white',
                         }

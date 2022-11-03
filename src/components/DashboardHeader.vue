@@ -1,8 +1,11 @@
 <template>
     <div class="header-container">
         <img class="header-image" src="../assets/dashboard-header-logo.svg" alt="">
-        <h2 class="header-text">Strategic Dashboard</h2>
-        <h3 class="header-date">01.01.2021-31.12.2022</h3>
+        <div>
+            <h2 class="header-text">Strategic Dashboard</h2>
+            <h3 class="header-date">Datumsbereich: 01.01.2021-31.12.2022</h3>
+        </div>
+        <span class="q-icon-account user-icon"></span>
     </div>
 </template>
 
@@ -23,6 +26,11 @@
 
 .header-image {
     width: 7rem;
+}
+
+.user-icon {
+    font-size: 3rem;
+    color: var(--color-primary);
 }
 
 .header-text {

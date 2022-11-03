@@ -5,7 +5,9 @@
     <DashboardCardWithChart v-for="(item, index) in cardItems" :dataLabel="item.dataLabel" :title="item.title"
       :subTitle="item.subTitle" :chartType="item.chartType" :iconText="item.iconText"
       :iconTextStyle="item.iconTextStyle" :icon="item.icon" :iconStyle="item.iconStyle" :text="item.text"
-      :subText="item.subText" />
+      :subText="item.subText" :backgroundColorStackedOne="item.backgroundColorStackedOne"
+      :backgroundColorStackedTwo="item.backgroundColorStackedTwo" :dataLabelStackedOne="item.dataLabelStackedOne"
+      :dataLabelStackedTwo="item.dataLabelStackedTwo" />
   </div>
 </template>
 
@@ -44,8 +46,11 @@ export default {
           subTitle: 'Monatliche neue Leads',
           iconText: '+5% zum vorherigen Monat',
           icon: 'q-icon-arrow-up',
-          chartType: 'bar',
-          dataLabel: 'Monatliche neue Leads',
+          chartType: 'stackedBar',
+          dataLabelStackedOne: 'Privatkunden',
+          dataLabelStackedTwo: 'Business Kunden',
+          backgroundColorStackedOne: '#A435F0',
+          backgroundColorStackedTwo: 'white'
         },
         {
           title: 'Personalgewinnung',

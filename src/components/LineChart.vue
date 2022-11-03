@@ -74,12 +74,25 @@ export default {
             },
             chartOptions: {
                 responsive: false,
+                plugins: {  // 'legend' now within object 'plugins {}'
+                    legend: {
+                        labels: {
+                            color: "white"
+                        }
+                    }
+                },
                 scales: {
                     x: {
-                        display: false
+                        display: true,
+                        ticks: {
+                            color: 'white',
+                        }
                     },
                     y: {
-                        display: false
+                        display: true,
+                        ticks: {
+                            color: 'white',
+                        }
                     }
                 }
             }

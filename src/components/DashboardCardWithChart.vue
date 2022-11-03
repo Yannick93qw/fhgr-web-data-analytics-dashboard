@@ -11,6 +11,9 @@
         <h3 v-if="subText" class="sub-text">{{ subText }}</h3>
         <BarChart v-if="chartType == 'bar'" :dataLabel="dataLabel" />
         <LineChart v-if="chartType == 'line'" :dataLabel="dataLabel" />
+        <StackedBarChart v-if="chartType == 'stackedBar'" :dataLabelOne="dataLabelStackedOne"
+            :dataLabelTwo="dataLabelStackedTwo" :backgroundColorOne="backgroundColorStackedOne"
+            :backgroundColorTwo="backgroundColorStackedTwo" />
     </div>
 </template>
 
@@ -80,10 +83,12 @@ span {
 
 <script>
 import BarChart from '@/components/BarChart.vue';
+import StackedBarChart from '@/components/StackedBarChart.vue';
 import LineChart from '@/components/LineChart.vue';
 export default {
     components: {
         BarChart,
+        StackedBarChart,
         LineChart
     },
     props: {
@@ -127,6 +132,22 @@ export default {
             default: ''
         },
         dataLabel: {
+            type: String,
+            default: ''
+        },
+        dataLabelStackedOne: {
+            type: String,
+            default: ''
+        },
+        dataLabelStackedTwo: {
+            type: String,
+            default: ''
+        },
+        backgroundColorStackedOne: {
+            type: String,
+            default: ''
+        },
+        backgroundColorStackedTwo: {
             type: String,
             default: ''
         },
