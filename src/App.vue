@@ -43,7 +43,7 @@ export default {
       cardItems: [
         {
           title: 'Lead Generation',
-          subTitle: 'Monatliche neue Leads',
+          subTitle: 'Neue Leads',
           iconText: '+5% zum vorherigen Monat',
           icon: 'q-icon-arrow-up',
           chartType: 'stackedBar',
@@ -54,7 +54,7 @@ export default {
         },
         {
           title: 'Personalgewinnung',
-          subTitle: 'Monatlich ausgefüllte Bewerbungsformulare',
+          subTitle: 'Ausgefüllte Bewerbungsformulare',
           iconText: '+10% zum vorherigen Monat',
           icon: 'q-icon-arrow-up',
           chartType: 'line',
@@ -62,7 +62,7 @@ export default {
         },
         {
           title: 'Online Sales',
-          subTitle: 'Monatliche Anzahl verkaufter Kurse',
+          subTitle: 'Anzahl gekaufte Kurse',
           iconText: '+15% zum vorherigen Monat',
           icon: 'q-icon-arrow-up',
           chartType: 'bar',
@@ -70,7 +70,7 @@ export default {
         },
         {
           title: 'Lead Generation',
-          subTitle: 'Monatliche Lead-to-Sale Conversion Rate',
+          subTitle: 'Lead-to-Sale Conversion Rate',
           icon: 'q-icon-arrow-down',
           iconText: '-1% zum vorherigen Monat',
           iconTextStyle: {
@@ -87,20 +87,19 @@ export default {
         },
         {
           title: 'Personalgewinnung',
-          subTitle: 'Monatliche Anzahl Besucher im Bereich "Bei Udemy unterrichten"',
+          subTitle: 'Anzahl Besucher im Bereich "Bei Udemy unterrichten"',
           iconText: '+5% zum vorherigen Monat',
           icon: 'q-icon-arrow-up',
           text: "10'000 Besucher",
           subText: "Target 15'000 Besucher"
         },
         {
-          title: 'Online Marketing',
-          subTitle: 'Monatlich gewonnen Neukunden durch Kampagne',
+          title: 'Online Sales',
+          subTitle: 'Bounce Rate',
           iconText: '+3% zum vorherigen Monat',
           icon: 'q-icon-arrow-up',
           chartType: 'line',
-          dataLabel: 'Neukunden durch Kampagne',
-
+          dataLabel: 'Bounce Rate',
         }
       ]
     }
