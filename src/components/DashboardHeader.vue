@@ -3,7 +3,7 @@
         <img class="header-image" src="../assets/dashboard-header-logo.svg" alt="">
         <div>
             <h2 class="header-text">Strategic Dashboard</h2>
-            <h3 class="header-date">Datumsbereich: 01.01.2021-31.12.2022</h3>
+            <h3 class="header-date">Datumsbereich: 01.01.2022-31.12.2022</h3>
         </div>
         <span class="q-icon-account user-icon"></span>
     </div>
